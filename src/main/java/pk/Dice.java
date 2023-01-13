@@ -11,5 +11,5 @@ public class Dice {
         Random bag = new Random();
         return Faces.values()[bag.nextInt(howManyFaces)];
     }
-    
+    //this is a comment
 }
