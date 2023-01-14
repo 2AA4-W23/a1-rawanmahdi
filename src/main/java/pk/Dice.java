@@ -11,5 +11,14 @@ public class Dice {
         Random bag = new Random();
         return Faces.values()[bag.nextInt(howManyFaces)];
     }
-    //this is a comment
+
+    public static Object[] roll8() {
+        Dice my_Dice = new Dice();
+        Object[] faces = new Object[8];
+        for(int i=0; i<8; i++){
+                faces[i] = my_Dice.roll();
+        }
+        return faces;
+    }
+
 }
