@@ -10,4 +10,8 @@ Time: 2:24 PM
 Task: Started roll8() function to implement F02
 
 
-Date: 
+Date: 2023-01-14
+Time: 6:09 PM
+Task: Debugging roll8()
+
+Date: 2023
