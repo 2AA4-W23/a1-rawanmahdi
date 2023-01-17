@@ -14,4 +14,6 @@ Date: 2023-01-14
 Time: 6:09 PM
 Task: Debugging roll8()
 
-Date: 2023
+Date: 2023-01-17
+Time: 12:30 PM
+Task: Updated backlog, started feature development
