@@ -12,10 +12,10 @@ public class Dice {
         return Faces.values()[bag.nextInt(howManyFaces)];
     }
 
-    public static Object[] roll8() {
+    public static Object[] rollAll(int numDice) {
         Dice my_Dice = new Dice();
         Object[] faces = new Object[8];
-        for(int i=0; i<8; i++){
+        for(int i=0; i<numDice; i++){
                 faces[i] = my_Dice.roll();
         }
         return faces;
