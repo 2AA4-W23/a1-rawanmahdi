@@ -1,4 +1,5 @@
 package pk;
+import java.util.ArrayList;
 
 public class Player {
 
@@ -6,6 +7,8 @@ public class Player {
     
     public int numSkulls = 0;
     
-    public Object[] rolledFaces;   
+    public ArrayList<Object> rolledFaces;
+
+    //public Object[] rolledFaces;   
     
 } 

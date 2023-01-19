@@ -17,3 +17,15 @@ Task: Debugging roll8()
 Date: 2023-01-17
 Time: 12:30 PM
 Task: Updated backlog, started feature development
+
+Date: 2023-01-17
+Time: 2:45 PM
+Task: worked on a delivered F03-F04
+
+Date: 2023-01-18
+Time: 10:30 AM
+Task: worked on F05
+
+Date: 2023-01-18
+Time: 8:15 PM
+Task: Debugging F05
