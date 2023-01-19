@@ -34,6 +34,6 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | x   | F03 | Play 42 games |  D  |  17/01/23 | 17/01/23 |
 | x   | F04 | end of turn with three skulls | D | 17/01/23 | 17/01/23 |
 | x   | F05 | Player keeping random dice at their turn | D | 17/01/23 | 19/01/23 | 
-| x   | F06 | Score points: gold coins and diamonds | B  (F05)| | 
+| x   | F06 | Score points: gold coins and diamonds | S| 19/01/2023 | | 
 | x   | F07 | Display percetage of wins | B (F06) |
 

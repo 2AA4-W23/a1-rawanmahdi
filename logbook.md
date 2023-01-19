@@ -36,4 +36,4 @@ Task: continued debugging F05
 
 Date: 2023-01-19
 Time: 11:05 AM 
-Task: delivered F05
+Task: delivered F05, start F06 development 
