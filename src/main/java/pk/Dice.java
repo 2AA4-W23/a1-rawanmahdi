@@ -39,4 +39,10 @@ public class Dice {
         }
         return faces;
     }
+
+    public static void printFaces(ArrayList<Object> faces){
+        for(int i=0; i<faces.size(); i++){
+            System.out.println(faces.get(i));
+        }
+    }
 }

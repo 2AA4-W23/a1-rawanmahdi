@@ -7,9 +7,8 @@ public class Simulator{
         Scanner sc = new Scanner(System.in);
         //for(int i=1; i<43; i++){
             System.out.println("Player 1's turn");
-            
+            p1.rolledFaces = Dice.rollAll(8); // first roll
             while(true){
-                p1.rolledFaces = Dice.rollAll(8);
                 int len = p1.rolledFaces.size();
                 for(int i=0; i<len; i++){
                     System.out.println(p1.rolledFaces.get(i));
@@ -26,7 +25,8 @@ public class Simulator{
                     break;
                 } else {
                     while(p1.rolledFaces.remove(Faces.SKULL)){}
-                    System.out.println("You have "+p1.rolledFaces.size()+ " dice left");
+                    System.out.println("You have "+p1.rolledFaces.size()+ " dice left:");
+                    Dice.printFaces(p1.rolledFaces);
                     System.out.println("Would you like to roll again? Answer yes/no: ");
                     String response = (String) sc.next();
                     if(response.equals("yes")){

@@ -29,3 +29,11 @@ Task: worked on F05
 Date: 2023-01-18
 Time: 8:15 PM
 Task: Debugging F05
+
+Date: 2023-01-19
+Time: 10:30 AM
+Task: continued debugging F05
+
+Date: 2023-01-19
+Time: 11:05 AM 
+Task: delivered F05
