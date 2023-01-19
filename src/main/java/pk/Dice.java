@@ -17,7 +17,7 @@ public class Dice {
         Dice myDice = new Dice();
         ArrayList<Object> faces = new ArrayList<Object>();
         //Object[] faces = new Object[8];
-        for(int i=0; i<=numDice; i++){
+        for(int i=0; i<numDice; i++){
             faces.add(myDice.roll());
             //faces[i] = my_Dice.roll();
         }

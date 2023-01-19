@@ -11,12 +11,10 @@ public class Simulator{
             while(true){
                 p1.rolledFaces = Dice.rollAll(8);
                 int len = p1.rolledFaces.size();
-                for(int i=0; i<(len-1); i++){
+                for(int i=0; i<len; i++){
                     System.out.println(p1.rolledFaces.get(i));
                     if(p1.rolledFaces.get(i) == Faces.SKULL){
-                        System.out.println
                         p1.numSkulls++;
-                        p1.rolledFaces.remove(i);
                     } 
                     if(p1.numSkulls >=3){
                         break;
@@ -27,6 +25,8 @@ public class Simulator{
                     p1.rolledFaces.clear();
                     break;
                 } else {
+                    while(p1.rolledFaces.remove(Faces.SKULL)){}
+                    System.out.println("You have "+p1.rolledFaces.size()+ " dice left");
                     System.out.println("Would you like to roll again? Answer yes/no: ");
                     String response = (String) sc.next();
                     if(response.equals("yes")){
