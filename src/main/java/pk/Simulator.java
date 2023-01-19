@@ -20,8 +20,7 @@ public class Simulator{
                 }
             }
             if(player.numSkulls >=3){
-                System.out.println("Player 1 rolled 3 skulls! Turn over :(");
-                player.rolledFaces.clear();
+                System.out.println("Player rolled 3 skulls! Turn over :(");
                 break;
             } else {
                 while(player.rolledFaces.remove(Faces.SKULL)){}
@@ -32,8 +31,7 @@ public class Simulator{
                 if(response.equals("yes")){
                     player.rolledFaces = Dice.randomRoll(player.rolledFaces);
                 } else {
-                    System.out.println("terminating Player 1's turn");
-                    player.rolledFaces.clear();
+                    System.out.println("terminating Player's turn");
                     break;
                 }
             }
@@ -42,9 +40,13 @@ public class Simulator{
     
     public static void play(Player p1, Player p2){
         
-        //for(int i=1; i<43; i++){
+        for(int i=1; i<43; i++){
             System.out.println("Player 1's turn");
             turn(p1);
-        //}
+            Player.clear(p1);
+            System.out.println("Player 2's turn");
+            turn(p2);
+            Player.clear(p2);
+        }
     }
 }

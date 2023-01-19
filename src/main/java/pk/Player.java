@@ -10,5 +10,11 @@ public class Player {
     public ArrayList<Object> rolledFaces;
 
     //public Object[] rolledFaces;   
+
+    public static void clear(Player player){
+        player.score = 0;
+        player.numSkulls = 0;
+        player.rolledFaces.clear();
+    }
     
 } 
