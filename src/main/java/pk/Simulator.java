@@ -40,13 +40,30 @@ public class Simulator{
     
     public static void play(Player p1, Player p2){
         
-        for(int i=1; i<43; i++){
+        for(int i=0; i<42; i++){
             System.out.println("Player 1's turn");
             turn(p1);
-            Player.clear(p1);
             System.out.println("Player 2's turn");
             turn(p2);
+            if(p1.score>p2.score){
+                p1.wins++;
+            } else if(p2.score>p1.score){
+                p2.wins++;
+            }
+            Player.clear(p1);
             Player.clear(p2);
         }
+        
+
     }
+
+    public static void displayWins(Player p1, Player p2){
+        float p1PercentWins = p1.wins*100/42;
+        float p2PercentWins = p2.wins*100/42;
+        System.out.println(p1.wins+" "+p2.wins);
+        System.out.println("Player 1 scored "+p1PercentWins+ "% of the time.");
+        System.out.println("Player 2 scored "+p2PercentWins+ "% of the time.");
+    }
+
+
 }

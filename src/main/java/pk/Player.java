@@ -9,8 +9,8 @@ public class Player {
     
     public ArrayList<Object> rolledFaces;
 
-    //public Object[] rolledFaces;   
-
+    public int wins = 0; 
+    
     public static void clear(Player player){
         player.score = 0;
         player.numSkulls = 0;

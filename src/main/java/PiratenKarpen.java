@@ -8,5 +8,6 @@ public class PiratenKarpen {
         Player p1 = new Player();
         Player p2 = new Player();
         Simulator.play(p1, p2);
+        Simulator.displayWins(p1, p2);
     }
 }
