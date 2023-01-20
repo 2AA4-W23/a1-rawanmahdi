@@ -4,7 +4,6 @@ import java.util.*;
 public class Simulator{
 
     public static void turn(Player player){
-        Scanner sc = new Scanner(System.in);
         player.rolledFaces = Dice.rollAll(8); // first roll
         while(true){
             player.score = ScoreCard.goldAndDiamond(player, player.rolledFaces);
@@ -26,14 +25,7 @@ public class Simulator{
                 while(player.rolledFaces.remove(Faces.SKULL)){}
                 System.out.println("You have "+player.rolledFaces.size()+ " dice left:");
                 Dice.printFaces(player.rolledFaces);
-                System.out.println("Would you like to roll again? Answer yes/no: ");
-                String response = (String) sc.next();
-                if(response.equals("yes")){
-                    player.rolledFaces = Dice.randomRoll(player.rolledFaces);
-                } else {
-                    System.out.println("terminating Player's turn");
-                    break;
-                }
+                player.rolledFaces = Dice.randomRoll(player.rolledFaces);
             }
         }
     }

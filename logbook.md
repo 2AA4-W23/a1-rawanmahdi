@@ -1,6 +1,5 @@
 Logbook
 
-
 Date: 2023-01-12
 Time: 6:23 PM
 Task: Created logbook, answered MVP questions
