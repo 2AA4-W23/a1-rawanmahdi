@@ -16,5 +16,9 @@ public class Player {
         player.numSkulls = 0;
         player.rolledFaces.clear();
     }
+
+    public float getPercentWins(){
+        return wins*100/42;
+    }
     
 } 

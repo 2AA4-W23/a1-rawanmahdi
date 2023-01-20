@@ -49,13 +49,4 @@ public class Simulator{
 
     }
 
-    public static void displayWins(Player p1, Player p2){
-        float p1PercentWins = p1.wins*100/42;
-        float p2PercentWins = p2.wins*100/42;
-        System.out.println(p1.wins+" "+p2.wins);
-        System.out.println("Player 1 scored "+p1PercentWins+ "% of the time.");
-        System.out.println("Player 2 scored "+p2PercentWins+ "% of the time.");
-    }
-
-
 }
