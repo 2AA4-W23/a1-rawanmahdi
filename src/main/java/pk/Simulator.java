@@ -5,28 +5,16 @@ public class Simulator{
 
     public static void turn(Player player){
         player.rolledFaces = Dice.rollAll(8); // first roll
-        while(true){
+        
+        while(!(ScoreCard.skulls(player))){ // while we dont have 3 skulls
+            System.out.println("You rolled the following: ");
+            Dice.printFaces(player.rolledFaces);
             player.score = ScoreCard.goldAndDiamond(player, player.rolledFaces);
             System.out.println("Your total score: "+player.score);
-            int len = player.rolledFaces.size();
-            for(int i=0; i<len; i++){
-                System.out.println(player.rolledFaces.get(i));
-                if(player.rolledFaces.get(i) == Faces.SKULL){
-                    player.numSkulls++;
-                } 
-                if(player.numSkulls >=3){  
-                break;
-                }
-            }
-            if(player.numSkulls >=3){
-                System.out.println("Player rolled 3 skulls! Turn over :(");
-                break;
-            } else {
-                while(player.rolledFaces.remove(Faces.SKULL)){}
-                System.out.println("You have "+player.rolledFaces.size()+ " dice left:");
-                Dice.printFaces(player.rolledFaces);
-                player.rolledFaces = Dice.randomRoll(player.rolledFaces);
-            }
+            while(player.rolledFaces.remove(Faces.SKULL)){}
+            System.out.println("You have "+player.rolledFaces.size()+ " dice left:");
+            Dice.printFaces(player.rolledFaces);
+            player.rolledFaces = Dice.randomRoll(player.rolledFaces);
         }
     }
     
@@ -48,5 +36,6 @@ public class Simulator{
         
 
     }
+
 
 }
