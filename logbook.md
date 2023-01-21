@@ -47,4 +47,4 @@ Task: began step 3, cleaning mess and implementing good OOP design
 
 Date: 2023-01-21
 Time: 11:38 AM
-Task: continued and finialized OOP design
+Task: continued and finialized OOP design, commented code

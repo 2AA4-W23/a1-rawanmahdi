@@ -8,7 +8,6 @@ public class PiratenKarpen {
         Player p1 = new Player();
         Player p2 = new Player();
         Simulator.play(p1, p2);
-        System.out.println(p1.wins+" "+p2.wins);
         System.out.println("Player 1 won "+p1.getPercentWins()+"% of the games.");
         System.out.println("Player 2 won "+p2.getPercentWins()+"% of the games.");
     }
