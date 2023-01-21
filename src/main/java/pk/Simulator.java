@@ -14,7 +14,7 @@ public class Simulator{
             while(player.rolledFaces.remove(Faces.SKULL)){}
             System.out.println("You have "+player.rolledFaces.size()+ " dice left:");
             Dice.printFaces(player.rolledFaces);
-            player.rolledFaces = Dice.randomRoll(player.rolledFaces);
+            player.rolledFaces = Strategies.randomRoll(player.rolledFaces);
         }
     }
     
@@ -33,9 +33,5 @@ public class Simulator{
             Player.clear(p1);
             Player.clear(p2);
         }
-        
-
     }
-
-
 }

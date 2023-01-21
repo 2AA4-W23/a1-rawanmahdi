@@ -40,3 +40,11 @@ Task: delivered F05, start F06 development, delivered F06
 Date: 2023-01-20
 Time: 11:31 AM
 Task: debugged F07, delivered it
+
+Date: 2023-01-20
+Time: 1:30 PM
+Task: began step 3, cleaning mess and implementing good OOP design
+
+Date: 2023-01-21
+Time: 11:38 AM
+Task: continued and finialized OOP design

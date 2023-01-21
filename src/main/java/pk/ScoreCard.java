@@ -15,8 +15,7 @@ public class ScoreCard{
         int len = player.rolledFaces.size();
         boolean threeSkulls = false;
         for(int i=0; i<len; i++){
-            
-            System.out.println(player.rolledFaces.get(i));
+
             if(player.rolledFaces.get(i) == Faces.SKULL){
                 player.numSkulls++;
             } 
