@@ -1,7 +1,10 @@
 package pk;
 import java.util.ArrayList;
+import org.apache.logging.log4j.*;
 
 public class ScoreCard{
+    
+    private static final Logger logger = LogManager.getLogger(ScoreCard.class);
 
     public static int goldAndDiamond(Player player, ArrayList<Object> faces){ // method to compute score based on number of gold coins and diamonds rolled
         for(int i=0; i<faces.size(); i++){
@@ -21,7 +24,8 @@ public class ScoreCard{
             } 
             if(player.numSkulls >=3){  
                 threeSkulls =  true;
-                System.out.println("Player rolled 3 skulls! Turn over :(");
+                //System.out.println("Player rolled 3 skulls! Turn over :(");
+                logger.trace("Player rolled 3 skulls, turn over.");
                 break;
             }
         }
