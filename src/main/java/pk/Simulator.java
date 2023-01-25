@@ -8,19 +8,30 @@ public class Simulator{
 
     public static void turn(Player player){
         player.rolledFaces = Dice.rollAll(8); // first roll, always start with 8 dice
-        
+        int count = 0;
+        System.out.println("You rolled the following: ");
+        Dice.printFaces(player.rolledFaces); 
         while(!(ScoreCard.skulls(player))){ // while we dont have 3 skulls
-            //System.out.println("You rolled the following: ");
-            //Dice.printFaces(player.rolledFaces); 
-            logger.info("Player rolled ", (Object) player.rolledFaces);
-            player.score = ScoreCard.goldAndDiamond(player, player.rolledFaces); // compute score for this roll 
-            //System.out.println("Your total score: "+player.score);
-            logger.info("Player's score is ", player.score);
+            //logger.info("Player rolled ", (Object) player.rolledFaces);
+            player.score = ScoreCard.comboScore(player, player.rolledFaces); // compute score for this roll 
+            System.out.println("Your total score: "+player.score);
+            //logger.info("Player's score is", player.score);
             while(player.rolledFaces.remove(Faces.SKULL)){} // remove all skulls from set of dice
-            //System.out.println("You have "+player.rolledFaces.size()+ " dice left:");
-            logger.info("Player has this many die left: ", player.rolledFaces.size());
-            //Dice.printFaces(player.rolledFaces);
-            player.rolledFaces = Strategies.randomRoll(player.rolledFaces); // continue game by executing random rolling startegy
+            System.out.println("You have "+player.rolledFaces.size()+ " dice left:");
+            //logger.info("Player has this many die left: ", player.rolledFaces.size());
+            Dice.printFaces(player.rolledFaces);
+            if(Strategies.keepRolling(player)){
+                player.rolledFaces = Strategies.comboRoll(player.rolledFaces); // continue game by executing random rolling startegy
+                System.out.println("You rolled the following: ");
+                Dice.printFaces(player.rolledFaces); 
+            }
+            else{
+                System.out.println("You rolled "+player.rolledFaces.size()+" of a kind.");
+                break;
+            }
+            //player.rolledFaces = Strategies.randomRoll(player.rolledFaces);
+        
+        
         }
     }
     

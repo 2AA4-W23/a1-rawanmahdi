@@ -1,5 +1,8 @@
 package pk;
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.Collections;
 import org.apache.logging.log4j.*;
 
 public class ScoreCard{
@@ -32,6 +35,51 @@ public class ScoreCard{
         return threeSkulls;
     }
 
-    
+    public static Map<Object,Integer> countFaces(ArrayList<Object> faces){
+        Map<Object, Integer> faceCount = new HashMap<Object, Integer>();
+        // create map with all faces we want 
+        faceCount.put(Faces.MONKEY,0);
+        faceCount.put(Faces.PARROT,0);
+        faceCount.put(Faces.GOLD,0);
+        faceCount.put(Faces.SABER,0);
+        faceCount.put(Faces.DIAMOND,0);
+        //faceCount.put(Faces.SKULL, 0);
+        for(Object f: faces){ // for each face
+            if(f != Faces.SKULL){
+                faceCount.replace(f, faceCount.get(f)+1); // increment value in map where face = key
+            }
+        }
+        return faceCount;
 
+    }
+
+    public static int comboScore(Player player, ArrayList<Object> faces){
+
+        Map<Object,Integer> frequency = countFaces(faces); // get frequency map
+        for(Map.Entry<Object,Integer> entry: frequency.entrySet()){ //iterate over map via entries
+            Object face = entry.getKey();
+            int freq = entry.getValue();
+            switch(freq){
+                case 3:
+                    player.score += 100;
+                    break;
+                case 4:
+                    player.score += 200;
+                    break;
+                case 5:
+                    player.score += 500;
+                    break;
+                case 6: 
+                    player.score += 1000;
+                    break;
+                case 7:
+                    player.score += 2000;
+                    break;
+                case 8:
+                    player.score += 4000;
+                    break;
+            }
+        }
+        return player.score;
+    }
 }

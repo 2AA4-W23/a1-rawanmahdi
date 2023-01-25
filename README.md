@@ -15,6 +15,8 @@
     * `mvn package`
   * To run the packaged delivery:
     * `java -jar target/piraten-karpen-jar-with-dependencies.jar` 
+  * To turn on trace mode:
+    * `java -jar target/piraten-karpen-jar-with-dependencies.jar`
 
 Remark: **We are assuming here you are using a _real_ shell (e.g., anything but PowerShell on Windows)**
 
@@ -37,5 +39,4 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | x   | F06 | Score points: gold coins and diamonds | D | 19/01/2023 | 19/01/2023 | 
 | x   | F07 | Display percetage of wins | D | 19/01/2023 | 20/01/2023 |
 | x   | F08 | Player optimizing combos at their turn| P | 23/01/2023 |  |
-| x   | F08 | Player's Selecting strategy as command line args | B(F08) |  |  |
-
+| x   | F09 | Player's Selecting strategy as command line args | B(F08) |  |  |
