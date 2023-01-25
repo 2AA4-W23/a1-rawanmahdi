@@ -6,7 +6,14 @@ import java.util.Collections;
 import org.apache.logging.log4j.*;
 
 public class ScoreCard{
-    
+    public static int computeScore(Player player){
+        player.score = comboScore(player, player.rolledFaces); // compute score for this roll 
+        player.score = goldAndDiamond(player, player.rolledFaces);    
+        return player.score;
+        }
+
+
+
     private static final Logger logger = LogManager.getLogger(ScoreCard.class);
 
     public static int goldAndDiamond(Player player, ArrayList<Object> faces){ // method to compute score based on number of gold coins and diamonds rolled
@@ -27,6 +34,7 @@ public class ScoreCard{
             } 
             if(player.numSkulls >=3){  
                 threeSkulls =  true;
+                player.score = 0; // remove all of players points
                 logger.trace("Player rolled 3 skulls, turn over.");
                 break;
             }
