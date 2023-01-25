@@ -39,6 +39,6 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | x   | F06 | Score points: gold coins and diamonds | D | 19/01/2023 | 19/01/2023 | 
 | x   | F07 | Display percetage of wins | D | 19/01/2023 | 20/01/2023 |
 | x   | F08 | Player optimizes combo of 1 card type per roll| D | 23/01/2023 | 24/01/2023 |
-| x   | F09 | Player's Selecting strategy as command line args | B(F08) |  |  |
+| x   | F09 | Player's Selecting strategy as command line args | S | 24/01/2023 |  |
 | x   | F10 | Displaying stats based on strategies used | B (F08, F09) |
 | x   | F11 | Player optimizes all possible combos per roll | P |||
