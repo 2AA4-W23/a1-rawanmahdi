@@ -8,14 +8,13 @@ public class PiratenKarpen {
     private static final Logger logger = LogManager.getLogger(PiratenKarpen.class);
 
     public static void main(String[] args) {
-        logger.trace("Entering Piraten Kerpen Simulator");
+        logger.trace("Entering Piraten Karpen Simulator");
         //System.out.println("Welcome to Piraten Karpen Simulator!");
         Player p1 = new Player();
         Player p2 = new Player();
         Simulator.play(p1, p2);
         System.out.println("Player 1 won "+p1.getPercentWins()+"% of the games.");
-        //logger.info("Percentage of games won by player 1: ", p1.getPercentWins());
         System.out.println("Player 2 won "+p2.getPercentWins()+"% of the games.");
-        //logger.info("Percentage of games won by player 2: ", p2.getPercentWins());
+        logger.trace("Exiting Piraten Karpen Simulator");
     }
 }

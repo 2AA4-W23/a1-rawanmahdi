@@ -16,7 +16,7 @@
   * To run the packaged delivery:
     * `java -jar target/piraten-karpen-jar-with-dependencies.jar` 
   * To turn on trace mode:
-    * `java -jar target/piraten-karpen-jar-with-dependencies.jar`
+    * go to src/main/resources, open log4j2.xml, on line 9, change <Root level="OFF"> to be <Root level="ALL">
 
 Remark: **We are assuming here you are using a _real_ shell (e.g., anything but PowerShell on Windows)**
 
@@ -38,5 +38,7 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | x   | F05 | Player keeping random dice at their turn | D | 17/01/23 | 19/01/23 | 
 | x   | F06 | Score points: gold coins and diamonds | D | 19/01/2023 | 19/01/2023 | 
 | x   | F07 | Display percetage of wins | D | 19/01/2023 | 20/01/2023 |
-| x   | F08 | Player optimizing combos at their turn| P | 23/01/2023 |  |
+| x   | F08 | Player optimizes combo of 1 card type per roll| D | 23/01/2023 | 24/01/2023 |
 | x   | F09 | Player's Selecting strategy as command line args | B(F08) |  |  |
+| x   | F10 | Displaying stats based on strategies used | B (F08, F09) |
+| x   | F11 | Player optimizes all possible combos per roll | P |||
