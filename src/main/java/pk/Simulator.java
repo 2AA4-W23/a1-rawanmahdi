@@ -12,6 +12,7 @@ public class Simulator{
         //Dice.printFaces(player.rolledFaces); 
         while(!(ScoreCard.skulls(player))){ // while we dont have 3 skulls
             player.score = ScoreCard.comboScore(player, player.rolledFaces); // compute score for this roll 
+            player.score = ScoreCard.goldAndDiamond(player, player.rolledFaces);
             //System.out.println("Your total score: "+player.score);
             while(player.rolledFaces.remove(Faces.SKULL)){} // remove all skulls from set of dice
             //System.out.println("You have "+player.rolledFaces.size()+ " dice left:");
