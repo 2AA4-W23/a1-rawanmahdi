@@ -14,8 +14,6 @@ public class Strategies{
         Collections.shuffle(faces); // randomize order
 
         for(int i=0; i<reroll; i++){
-            //List<Object> facesList = Arrays.asList(faces);
-            //facesList.toArray(faces);
             faces.set(i, dice.roll()); // replace first element
         }
         return faces;

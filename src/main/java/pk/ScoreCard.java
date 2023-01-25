@@ -27,7 +27,6 @@ public class ScoreCard{
             } 
             if(player.numSkulls >=3){  
                 threeSkulls =  true;
-                //System.out.println("Player rolled 3 skulls! Turn over :(");
                 logger.trace("Player rolled 3 skulls, turn over.");
                 break;
             }
@@ -43,7 +42,6 @@ public class ScoreCard{
         faceCount.put(Faces.GOLD,0);
         faceCount.put(Faces.SABER,0);
         faceCount.put(Faces.DIAMOND,0);
-        //faceCount.put(Faces.SKULL, 0);
         for(Object f: faces){ // for each face
             if(f != Faces.SKULL){
                 faceCount.replace(f, faceCount.get(f)+1); // increment value in map where face = key
