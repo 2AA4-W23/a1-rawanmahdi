@@ -10,9 +10,7 @@ public class ScoreCard{
         player.score = comboScore(player, player.rolledFaces); // compute score for this roll 
         player.score = goldAndDiamond(player, player.rolledFaces);    
         return player.score;
-        }
-
-
+    }
 
     private static final Logger logger = LogManager.getLogger(ScoreCard.class);
 
@@ -58,6 +56,19 @@ public class ScoreCard{
         return faceCount;
 
     }
+
+    public static boolean seaBattleCard(Player player, ArrayList<Object> card){
+        boolean keepRolling = true;
+        ArrayList<Object> faces = player.rolledFaces;
+        Map<Object,Integer> frequency = countFaces(faces);
+        int numSabers = frequency.get(Faces.SABER);
+        if(numSabers == (int) card.get(1)){
+            player.score += (int) card.get(2);
+            keepRolling = false;
+        }
+        return keepRolling;
+    }
+
 
     public static int comboScore(Player player, ArrayList<Object> faces){
 

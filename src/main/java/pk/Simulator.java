@@ -10,10 +10,14 @@ public class Simulator{
     
         player.rolledFaces = Dice.rollAll(8); // first roll, always start with 8 dice
         int count = 0;
-        // System.out.println("Card drawn: "+ card.get(0) + " with num: "+ card.get(1));
+        System.out.println("Card drawn: "+ card.get(0) + " with num: "+ card.get(1));
         while(!(ScoreCard.skulls(player))){ // while we dont have 3 skulls
             ScoreCard.computeScore(player);
             while(player.rolledFaces.remove(Faces.SKULL)){} // remove all skulls from set of dice
+            if(!ScoreCard.seaBattleCard(player, card)){ // check if player won bonus for seaBattle
+                logger.trace("Player won sea battle bonus");
+                break;
+            }
             if(Strategies.keepRolling(player)){
                 if(strategy.equals("random")){
                     player.rolledFaces = Strategies.randomRoll(player.rolledFaces); // continue game by executing random rolling startegy
