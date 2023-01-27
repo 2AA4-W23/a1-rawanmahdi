@@ -6,7 +6,7 @@ import java.util.Collections;
 import org.apache.logging.log4j.*;
 
 public class ScoreCard{
-    public static int computeScore(Player player){
+    public static int computeScore(Player player){ // method to compute score regardless of type of card we have 
         player.score = comboScore(player, player.rolledFaces); // compute score for this roll 
         player.score = goldAndDiamond(player, player.rolledFaces);    
         return player.score;
@@ -23,7 +23,7 @@ public class ScoreCard{
         return player.score;
     }
 
-    public static boolean skulls(Player player){ // method to check if game should continue based on how many skulls a player has rolled
+    public static boolean threeSkulls(Player player){ // method to check if game should continue based on how many skulls a player has rolled
         int len = player.rolledFaces.size();
         boolean threeSkulls = false;
         for(int i=0; i<len; i++){

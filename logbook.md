@@ -48,3 +48,23 @@ Task: began step 3, cleaning mess and implementing good OOP design
 Date: 2023-01-21
 Time: 11:38 AM
 Task: continued and finialized OOP design, commented code
+
+Date: 2023-01-22
+Task: created new feeatures to match step 4's buisness logic
+
+Date:2023-01-23
+Task: began implementing the combo optimizer feature, realized that optimizing multiple cards in one role 
+      would be very intensive and would require more time and debugging therefore redesigned features and updated
+      backlog to match time constraint
+
+Date: 2023-01-24
+Task: continued developing and debugging features for next release, pushing F10 to next iteration
+
+Date: 2023-01-25
+Task: updated backlog to match new buisness logic, adding in seabatlle features
+
+Date: 2023-01-26
+Task: developed and debugged new features, still pushing F10 to match deadlines
+
+Date: 2023-01-27
+Task: wrapping up development and debugging for features in step 5 

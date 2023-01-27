@@ -10,28 +10,28 @@ public class CardDeck {
     public static ArrayList<ArrayList<Object>> makePile(){
         ArrayList<ArrayList<Object>> pile = new ArrayList<ArrayList<Object>>();
     
-        for(int i=0; i<2; i++){ // add 
+        for(int i=0; i<10; i++){ // add 
             ArrayList<Object> card = new ArrayList<Object>(); 
             card.add(Cards.SeaBattle);
             card.add(2);
             card.add(300);
             pile.add(card);
         }
-        for(int i=0; i<2; i++){ // add 
+        for(int i=0; i<10; i++){ // add 
             ArrayList<Object> card = new ArrayList<Object>(); 
             card.add(Cards.SeaBattle);
             card.add(3);
             card.add(500);
             pile.add(card);
         }
-        for(int i=0; i<2; i++){ // add 
+        for(int i=0; i<10; i++){ // add 
             ArrayList<Object> card = new ArrayList<Object>(); 
             card.add(Cards.SeaBattle);
             card.add(4);
             card.add(1000);
             pile.add(card);
         }
-        for(int i=6; i<35; i++){
+        for(int i=6; i<5; i++){
             ArrayList<Object> card = new ArrayList<Object>(); 
             card.add(Cards.nop);
             card.add(i+1);

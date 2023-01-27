@@ -18,6 +18,17 @@ public class Dice {
         }
         return faces;
     }
+
+    public static ArrayList<Object> rerollSpecified(ArrayList<Object> faces, Object keepFace){
+        Dice dice = new Dice();
+        for(int i=0; i<faces.size(); i++){
+            if(faces.get(i)!=keepFace){
+                faces.set(i, dice.roll()); // roll all dice in set that arent the keep face
+            }
+        }
+        return faces;
+    }
+    
     public static void printFaces(ArrayList<Object> faces){ //method to streamline printing the faces - for debugging
         for(int i=0; i<faces.size(); i++){
             System.out.println(faces.get(i));
