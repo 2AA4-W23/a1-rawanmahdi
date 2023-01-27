@@ -44,4 +44,4 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | x   | F11 | Player draws random card from deck | D | 24/01/2023 | 26/01/2023 |
 | x   | F12 | 6 Sea battle cards in deck affect player's turn | D |  26/01/2023 | 26/01/2023 |
 | x   | F13 | Player optimizes rerolled dice when drawing sea battle card by default | D | 26/01/2023 | 27/01/2023 |
-| x   | F14 | Player gets to choose their startgy even if they drew a good carf | P |||
+| x   | F14 | Combo strategy will act optimizes combo for drawn card if not nop | P |||
