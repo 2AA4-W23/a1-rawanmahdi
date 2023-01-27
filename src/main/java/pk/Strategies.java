@@ -39,22 +39,23 @@ public class Strategies{
 
     }
         
-    
 
-    public static ArrayList<Object> randomRoll(ArrayList<Object> faces){
+
+    public static void randomRoll(Player player){
+        ArrayList<Object> faces = player.rolledFaces;
         int len = faces.size();
         Random rand = new Random();
         int reroll = rand.nextInt(len+1); // reroll 0-len dice 
         Dice dice = new Dice();
         Collections.shuffle(faces); // randomize order
-
         for(int i=0; i<reroll; i++){
             faces.set(i, dice.roll()); // replace first element
         }
-        return faces;
+        player.rolledFaces = faces;
     }
 
-    public static ArrayList<Object> comboRoll(ArrayList<Object> faces){
+    public static void comboRoll(Player player){
+        ArrayList<Object> faces =  player.rolledFaces;
         Dice dice = new Dice();
         Map<Object,Integer> frequency = ScoreCard.countFaces(faces); // get frequency map
         Object keepFace = dice.roll(); // init to random face
@@ -68,12 +69,7 @@ public class Strategies{
             }
         }
         Dice.rerollSpecified(faces, keepFace);
-        /*for(int i=0; i<faces.size(); i++){
-            if(faces.get(i) != keepFace){ // if the face at index i is not in the set of faces we keep, 
-                faces.set(i, dice.roll()); // reroll face at i;
-            }
-        }*/
-        return faces;
+        player.rolledFaces = faces;
     }
 
     public static void cardRoll(Player player, ArrayList<Object> card){

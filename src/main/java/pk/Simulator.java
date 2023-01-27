@@ -9,27 +9,7 @@ public class Simulator{
     public static void turn(Player player, String strategy, ArrayList<Object> card){
         player.rolledFaces = Dice.rollAll(8); // first roll, always start with 8 dice
         System.out.println("Card drawn: "+ card.get(0) + " with num: "+ card.get(1));
-        /*while(!(ScoreCard.skulls(player))){ // while we dont have 3 skulls
-            ScoreCard.computeScore(player);
-            while(player.rolledFaces.remove(Faces.SKULL)){} // remove all skulls from set of dice
-            if(!ScoreCard.seaBattleCard(player, card)){ // check if player won bonus for seaBattle
-                logger.trace("Player won sea battle bonus");
-                break;
-            }
-            if(Strategies.keepRolling(player)){
-                if(strategy.equals("random")){
-                    player.rolledFaces = Strategies.randomRoll(player.rolledFaces); // continue game by executing random rolling startegy
-                    logger.trace("Player rerolled using random strategy");
-                } else if (strategy.equals("combo")){
-                    player.rolledFaces = Strategies.comboRoll(player.rolledFaces); // continue game by executing random rolling startegy
-                    logger.trace("Player rerolled using combo strategy");
-                }
-            }
-            else{
-                logger.trace("Player rolled all of 1 kind");
-                break;
-            }
-        }*/
+        
 
         while(true){ // loop until broken
             // deal with skulls in set: 
@@ -41,17 +21,18 @@ public class Simulator{
 
             // should we keep rolling?
             if(Strategies.keepRolling(player, card)){
-                if(card.get(0) !=  Cards.nop){ // if we have an impactful card
-                    logger.trace("Player rolled with card oriented strategy");
-                    Strategies.cardRoll(player, card); // roll using a card strategy
-                } else{ // otherwise roll via 
-                    if(strategy.equals("random")){
-                        player.rolledFaces = Strategies.randomRoll(player.rolledFaces); // continue game by executing random rolling startegy
-                        logger.trace("Player rerolled using random strategy");
-                    } else if (strategy.equals("combo")){
-                        player.rolledFaces = Strategies.comboRoll(player.rolledFaces); // continue game by executing random rolling startegy
+                if(strategy.equals("combo")){
+                    if(card.get(0) !=  Cards.nop){ // if player drew good card
+                        Strategies.cardRoll(player, card); // roll using a card strategy
+                        logger.trace("Player rolled with card oriented strategy");                    
+                    }
+                    else{ // if the player chooses card but draws nop, choose
+                        Strategies.comboRoll(player); // continue game by executing random rolling startegy
                         logger.trace("Player rerolled using combo strategy");
                     }
+                } else if(strategy.equals("random")){
+                        Strategies.randomRoll(player); // continue game by executing random rolling startegy
+                        logger.trace("Player rerolled using random strategy");
                 }
                 //System.out.println("Rolled faces: ");
                 //Dice.printFaces(player.rolledFaces);
@@ -59,7 +40,6 @@ public class Simulator{
                 logger.trace("Player rolled all of 1 kind");
                 break;
             }
-
         }
     }
     
