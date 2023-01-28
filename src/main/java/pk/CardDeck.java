@@ -5,9 +5,9 @@ import java.util.Random;
 
 
 public class CardDeck {
-    
-    //public ArrayList<Object> pile; // turn this into a queue
+
     public static ArrayList<ArrayList<Object>> makePile(){
+
         ArrayList<ArrayList<Object>> pile = new ArrayList<ArrayList<Object>>();
         for(int i=0; i<2; i++){ // add 
             ArrayList<Object> card = new ArrayList<Object>(); 
@@ -30,15 +30,15 @@ public class CardDeck {
             card.add(1000);
             pile.add(card);
         }
-        for(int i=0; i<30; i++){ // add 
+        for(int i=0; i<4; i++){ // add 
             ArrayList<Object> card = new ArrayList<Object>(); 
             card.add(Cards.MonkeyBuisness);
             card.add(i+1);
             card.add(null);
             pile.add(card);
         }
-        
-        for(int i=10; i<20; i++){
+
+        for(int i=10; i<35; i++){
             ArrayList<Object> card = new ArrayList<Object>(); 
             card.add(Cards.nop);
             card.add(i+1);
