@@ -31,7 +31,15 @@ public class CardDeck {
             card.add(1000);
             pile.add(card);
         }
-        for(int i=6; i<35; i++){
+        for(int i=0; i<4; i++){ // add 
+            ArrayList<Object> card = new ArrayList<Object>(); 
+            card.add(Cards.MonkeyBuisness);
+            card.add(i+1);
+            card.add(null);
+            pile.add(card);
+        }
+        
+        for(int i=10; i<35; i++){
             ArrayList<Object> card = new ArrayList<Object>(); 
             card.add(Cards.nop);
             card.add(i+1);
@@ -42,9 +50,6 @@ public class CardDeck {
     }
 
     public static ArrayList<Object> draw(ArrayList<ArrayList<Object>> pile){
-        //ArrayList<Object> drawnCard = pile.get(0);
-        //pile.get(0);
-        //return drawnCard;
 
         return pile.remove(0);
         

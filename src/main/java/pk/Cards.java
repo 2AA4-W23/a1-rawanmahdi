@@ -2,5 +2,5 @@ package pk;
 import java.util.ArrayList;
 
 public enum Cards {
-    SeaBattle, nop
+    SeaBattle, nop, MonkeyBuisness
 }
