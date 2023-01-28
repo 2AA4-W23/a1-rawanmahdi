@@ -69,4 +69,5 @@ Task: developed and debugged new features, still pushing F10 to match deadlines
 Date: 2023-01-27
 Task: wrapping up development and debugging for features in step 5, updayed backlog to implement monkey cards and began development of those new features
 
-
+Date: 2023-01-28
+Task: finalized features for step 6, clean up trace, print stamtents, wokr on better OOP

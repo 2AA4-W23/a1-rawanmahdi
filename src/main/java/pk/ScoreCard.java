@@ -28,6 +28,7 @@ public class ScoreCard{
         boolean threeSkulls = false;
         for(int i=0; i<len; i++){
             if(player.rolledFaces.get(i) == Faces.SKULL){
+                logger.trace("Player rolled a skull");
                 player.numSkulls++;
             } 
             if(player.numSkulls >=3){  
@@ -57,22 +58,16 @@ public class ScoreCard{
 
     }
 
-    public static boolean seaBattleCard(Player player, ArrayList<Object> card){
-        boolean keepRolling = true;
+
+
+    public static int comboScore(Player player, ArrayList<Object> card){
         ArrayList<Object> faces = player.rolledFaces;
-        Map<Object,Integer> frequency = countFaces(faces);
-        int numSabers = frequency.get(Faces.SABER);
-        if(numSabers == (int) card.get(1)){
-            player.score += (int) card.get(2);
-            keepRolling = false;
-        }
-        return keepRolling;
-    }
-
-
-    public static int comboScore(Player player, ArrayList<Object> faces){
-
         Map<Object,Integer> frequency = countFaces(faces); // get frequency map
+        if(card.get(0) == Cards.MonkeyBuisness){
+            int totalMP = frequency.get(Faces.MONKEY) + frequency.get(Faces.PARROT);
+            frequency.replace(Faces.MONKEY, totalMP); // add parrot count to monkey count
+            frequency.replace(Faces.PARROT, 0); // remove parrot count
+        }
         for(Map.Entry<Object,Integer> entry: frequency.entrySet()){ //iterate over map via entries
             Object face = entry.getKey();
             int freq = entry.getValue();

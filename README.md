@@ -46,5 +46,5 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | x   | F13 | Player optimizes rerolled dice when drawing sea battle card by default | D | 26/01/2023 | 27/01/2023 |
 | x   | F14 | Combo strategy will act optimizes combo for Sabers if Sea Battle card is drawn  | D | 27/01/2023 | 27/01/2023 |
 | x   | F15 | 4 Monkey Buisness cards in deck | D | 27/01/2023 | 28/01/2023 |
-| x   | F16 | Monkey Buisness cards in deck affect player's turn | S | 27/01/2023 | |
-| x   | F17 | Combo strategy will act optimizes combo for parrots/momedrawn card if not nop | D | 27/01/2023 | 27/01/2023 |
+| x   | F16 | Monkey Buisness cards in deck affect player's turn | D | 27/01/2023 | 28/01/2023 |
+| x   | F17 | Combo strategy will act optimizes combo for parrots/momedrawn card if not nop | D | 28/01/2023 | 28/01/2023 |

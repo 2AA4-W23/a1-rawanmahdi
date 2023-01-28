@@ -17,11 +17,19 @@ public class Strategies{
 
         if(card.get(0)==Cards.SeaBattle){
             int numSabers = frequency.get(Faces.SABER); // if we have Sea Battle card
-                if(numSabers >= (int) card.get(1)){
-                    player.score += (int) card.get(2);
-                    shouldRoll = false; // stop rolling when we roll the wanted num of sabers
-                    logger.trace("Player rolled required Saber count for Sea Battle card, terminating turn");
-                } 
+            if(numSabers >= (int) card.get(1)){
+                player.score += (int) card.get(2);
+                shouldRoll = false; // stop rolling when we roll the wanted num of sabers
+                logger.trace("Player rolled required Saber count for Sea Battle card, terminating turn");
+            } 
+        } else if(card.get(0) == Cards.MonkeyBuisness) {
+            int numMonkeys = frequency.get(Faces.MONKEY);
+            int numParrots = frequency.get(Faces.PARROT);
+            if(numMonkeys+numParrots == player.rolledFaces.size()){
+                shouldRoll = false;
+                logger.trace("Player rolled all Monkeys and Parrots for the Monkey Buisness card, terminating turn");
+            }
+
         } else if(card.get(0) == Cards.nop) {
             for(Map.Entry<Object,Integer> entry: frequency.entrySet()){
                 Object face = entry.getKey();
@@ -77,6 +85,13 @@ public class Strategies{
         Dice dice = new Dice();
         if(card.get(0)==Cards.SeaBattle){
             Dice.rerollSpecified(faces, Faces.SABER);
+        }
+        if(card.get(0)==Cards.MonkeyBuisness){
+            for(int i=0; i<faces.size(); i++){
+                if(faces.get(i)!=Faces.MONKEY && faces.get(i)!=Faces.PARROT){
+                    faces.set(i, dice.roll()); // roll all dice in set that arent the keep face
+                }
+            }
         }
         player.rolledFaces = faces;
     }
