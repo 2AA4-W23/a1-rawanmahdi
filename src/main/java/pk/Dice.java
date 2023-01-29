@@ -4,13 +4,13 @@ import java.util.Random;
 
 public class Dice {
 
-    public Faces roll() {
+    public Faces roll() { // roll 1 face 
         int howManyFaces = Faces.values().length;
         Random bag = new Random();
         return Faces.values()[bag.nextInt(howManyFaces)];
     }
 
-    public static ArrayList<Object> rollAll(int numDice) {
+    public static ArrayList<Object> rollAll(int numDice) { // roll the number of dice we have 
         Dice myDice = new Dice();
         ArrayList<Object> faces = new ArrayList<Object>();
         for(int i=0; i<numDice; i++){
@@ -19,7 +19,7 @@ public class Dice {
         return faces;
     }
 
-    public static ArrayList<Object> rerollSpecified(ArrayList<Object> faces, Object keepFace){
+    public static ArrayList<Object> rerollSpecified(ArrayList<Object> faces, Object keepFace){ // roll dice that are not the keepFace, i.e. the dice we want to keep
         Dice dice = new Dice();
         for(int i=0; i<faces.size(); i++){
             if(faces.get(i)!=keepFace){

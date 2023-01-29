@@ -40,7 +40,7 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | x   | F07 | Display percetage of wins | D | 19/01/2023 | 20/01/2023 |
 | x   | F08 | Player optimizes combo of 1 card type per roll| D | 23/01/2023 | 24/01/2023 |
 | x   | F09 | Player's Selecting strategy as command line args | D | 24/01/2023 | 24/01/2023 |
-| x   | F10 | Player optimizes all possible combos per roll | P |||
+| x   | F10 | Player optimizes all possible combos per roll | CANCELED  |||
 | x   | F11 | Player draws random card from deck | D | 24/01/2023 | 26/01/2023 |
 | x   | F12 | 6 Sea battle cards in deck affect player's turn | D |  26/01/2023 | 26/01/2023 |
 | x   | F13 | Player optimizes rerolled dice when drawing sea battle card by default | D | 26/01/2023 | 27/01/2023 |

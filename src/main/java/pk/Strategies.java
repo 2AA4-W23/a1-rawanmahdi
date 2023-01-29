@@ -6,7 +6,6 @@ import java.util.Collections;
 import java.util.Random;
 import org.apache.logging.log4j.*;
 
-
 public class Strategies{
 
     private static final Logger logger = LogManager.getLogger(Strategies.class);
@@ -14,7 +13,6 @@ public class Strategies{
     public static boolean keepRolling(Player player, ArrayList<Object> card){
         boolean shouldRoll = true;
         Map<Object,Integer> frequency = ScoreCard.countFaces(player.rolledFaces);
-
         if(card.get(0)==Cards.SeaBattle){
             int numSabers = frequency.get(Faces.SABER); // if we have Sea Battle card
             if(numSabers >= (int) card.get(1)){
@@ -29,7 +27,6 @@ public class Strategies{
                 shouldRoll = false;
                 logger.trace("Player rolled all Monkeys and Parrots for the Monkey Buisness card, terminating turn");
             }
-
         } else if(card.get(0) == Cards.nop) {
             for(Map.Entry<Object,Integer> entry: frequency.entrySet()){
                 Object face = entry.getKey();
@@ -40,14 +37,9 @@ public class Strategies{
                     break;
                 }
             }
-        }
-
-        
+        } 
         return shouldRoll;
-
     }
-        
-
 
     public static void randomRoll(Player player){
         ArrayList<Object> faces = player.rolledFaces;
@@ -78,7 +70,7 @@ public class Strategies{
         }
         Dice.rerollSpecified(faces, keepFace);
         player.rolledFaces = faces;
-    }
+    } 
 
     public static void cardRoll(Player player, ArrayList<Object> card){
         ArrayList<Object> faces = player.rolledFaces;

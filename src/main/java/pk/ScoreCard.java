@@ -5,16 +5,18 @@ import java.util.HashMap;
 import java.util.Collections;
 import org.apache.logging.log4j.*;
 
-public class ScoreCard{
-    public static int computeScore(Player player){ // method to compute score regardless of type of card we have 
-        player.score = comboScore(player, player.rolledFaces); // compute score for this roll 
-        player.score = goldAndDiamond(player, player.rolledFaces);    
+public class ScoreCard{ // class acting as the games score card, used to keep track of player's score during their turn
+
+    public static int computeScore(Player player, ArrayList<Object> card){ // method to compute score regardless of type of card we have 
+        player.score = comboScore(player, card); // compute score for this roll 
+        player.score = goldAndDiamond(player);    
         return player.score;
     }
 
     private static final Logger logger = LogManager.getLogger(ScoreCard.class);
 
-    public static int goldAndDiamond(Player player, ArrayList<Object> faces){ // method to compute score based on number of gold coins and diamonds rolled
+    public static int goldAndDiamond(Player player ){ // method to compute score based on number of gold coins and diamonds rolled
+        ArrayList<Object> faces = player.rolledFaces;
         for(int i=0; i<faces.size(); i++){
             if(faces.get(i)==Faces.GOLD || faces.get(i)==Faces.DIAMOND){
                 player.score += 100;
@@ -57,8 +59,6 @@ public class ScoreCard{
         return faceCount;
 
     }
-
-
 
     public static int comboScore(Player player, ArrayList<Object> card){
         ArrayList<Object> faces = player.rolledFaces;

@@ -4,7 +4,6 @@ import org.apache.logging.log4j.*;
 
 
 public class PiratenKarpen {
-
     private static final Logger logger = LogManager.getLogger(PiratenKarpen.class);
     public static void main(String[] args) {
         logger.trace("Entering Piraten Karpen Simulator");

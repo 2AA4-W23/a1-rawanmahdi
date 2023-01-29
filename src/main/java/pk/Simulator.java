@@ -7,19 +7,23 @@ public class Simulator{
     private static final Logger logger = LogManager.getLogger(Simulator.class);
 
     public static void turn(Player player, String strategy, ArrayList<Object> card){
+
         player.rolledFaces = Dice.rollAll(8); // first roll, always start with 8 dice
-        System.out.println("Card drawn: "+ card.get(0) + " with num: "+ card.get(1));
+        logger.trace("Card drawn: "+ card.get(0) + " with num: "+ card.get(1));
         
-        while(true){ // loop until broken
+        while(true){ // loop break conditions that end turn 
+            logger.trace("Rolled faces: ");
+            for(int i=0; i<player.rolledFaces.size(); i++){
+                logger.trace("face: "+player.rolledFaces.get(i));
+            }
+
             // deal with skulls in set: 
-            System.out.println("Rolled faces: ");
-            Dice.printFaces(player.rolledFaces);
             if(ScoreCard.threeSkulls(player)){ break; }
             while(player.rolledFaces.remove(Faces.SKULL)){} // remove all skulls from set of dice
             
             // calculate score from last roll according to combos and gold coins/diamonds
-            ScoreCard.computeScore(player); 
-            System.out.println("Player score: "+ player.score);
+            ScoreCard.computeScore(player,card); 
+            logger.trace("Player score: "+ player.score);
 
             // should we keep rolling?
             if(Strategies.keepRolling(player, card)){
@@ -52,8 +56,8 @@ public class Simulator{
             logger.trace("Executing Player 2's turn");
             ArrayList<Object> drawnCard2 = CardDeck.draw(deck);
             turn(p2, startegy2, drawnCard2); // execute second player's turn
-            System.out.println("Player 1 total score: "+ p1.score);
-            System.out.println("Player 2 total score: "+ p2.score);
+            logger.trace("Player 1 total score: "+ p1.score);
+            logger.trace("Player 2 total score: "+ p2.score);
             if(p1.score>p2.score){
                 p1.wins++; // count wins
             } else if(p2.score>p1.score){

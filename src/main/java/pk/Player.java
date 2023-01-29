@@ -3,6 +3,7 @@ import java.util.ArrayList;
 
 public class Player {
 
+    // nonstatic attributes individual to player object:
     public int score = 0;  
     
     public int numSkulls = 0;

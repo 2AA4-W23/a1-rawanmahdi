@@ -50,6 +50,5 @@ public class CardDeck {
 
     public static ArrayList<Object> draw(ArrayList<ArrayList<Object>> pile){
         return pile.remove(0);
-        
     }
 } 
