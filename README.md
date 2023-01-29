@@ -16,7 +16,7 @@
   * To run the packaged delivery:
     * `java -jar target/piraten-karpen-jar-with-dependencies.jar` 
   * To turn on trace mode:
-    * go to src/main/resources, open log4j2.xml, on line 9, change <Root level="OFF"> to be <Root level="ALL">
+    * go to src/main/resources, open log4j2.xml, on line 9, change `<Root level="OFF"> to be <Root level="ALL">`
 
 Remark: **We are assuming here you are using a _real_ shell (e.g., anything but PowerShell on Windows)**
 
